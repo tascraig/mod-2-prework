@@ -47,7 +47,7 @@ body{
 #imgBox{
     width: 200px;
     border-radius: 5px;
-    max-height: ;
+    max-height: 100px;
     overflow: hidden;
     transition: max-height 1s;
 }
