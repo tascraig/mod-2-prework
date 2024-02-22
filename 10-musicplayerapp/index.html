@@ -21,14 +21,14 @@
         <h1>Rock And Come In</h1>
         <p>Linky First</p>
 
-        <audio controls>
+        <audio id="song">
             <source src="media/01 Rock & Come In.mp3" type="audio/mpeg">
         </audio>
         <input type="range" value="0" id="progress">
 
         <div class="controls">
             <div><i class="fa-solid fa-backward"></i></div>
-            <div onclick="playPause()"><i class="fa-solid fa-play" id=ctrlIcon"></i></div>
+            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
             <div><i class="fa-solid fa-forward"></i></i></div>
         </div>
 
@@ -59,6 +59,21 @@ function playPause(){
         ctrlIcon.classList.remove("fa-play");
     }
 }
+
+if(song.play()){
+    setInterval(() => {
+        progress.value = song.currentTime;
+    },500);
+}
+
+progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+}
+
+
 
 </script>
 
