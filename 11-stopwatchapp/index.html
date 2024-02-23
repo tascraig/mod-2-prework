@@ -17,9 +17,9 @@
                 </div>
             </div>
             <div class="button-wrapper">
-                <button class="button reset display-none">Reset</button>
+                <button class="button reset hidden">Reset</button>
                 <button class="button play">Play</button>
-                <button class="button lap display-none">Lap</button>
+                <button class="button lap hidden">Lap</button>
             </div>
         </div>  
         <ul class="laps">
@@ -65,8 +65,16 @@
         const resetButton = document.getElementsByClassName("play")[0];
 
         const toggleButton = () => {
-            lapButton.classList.remove("display-none")
+            lapButton.classList.remove("hidden")
+            resetButton.classList.remove("hidden")
         }
+
+        const play = () => {
+            toggleButton();
+        }
+
+        playButton.addEventListener("click", play)
+
     </script>
 </body>
 </html>

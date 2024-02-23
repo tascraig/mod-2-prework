@@ -125,6 +125,6 @@ body {
     border: 1px solid antiquewhite;
 }
 
-.display-none{
+.hidden{
     visibility: hidden;
 }
